@@ -1,0 +1,33 @@
+.main {
+  position: relative;
+  top: 100px;
+  display: flex;
+  background-color: black;
+}
+.carousel {
+  height: 70vh;
+  width: 50vw;
+}
+.d-block {
+  height: 70vh;
+}
+.carousel-caption  > h5 {
+  color: #fff;
+}
+.carousel-caption > p {
+  font-size: 20px;
+}
+.site {
+  padding: 30px 60px;
+}
+.site-logo {
+  height: 40vh;
+}
+.site-slogan {
+  position: relative;
+  bottom: 10%;
+  text-align: center;
+}
+.site-description {
+  text-align: justify;
+}
