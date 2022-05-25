@@ -1,0 +1,22 @@
+.menu {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: #2f7c72;
+}
+.logo > img {
+  height: 100px;
+}
+.links {
+  position: absolute;
+  right: 0%;
+  padding-right: 25px;
+}
+.links > a {
+  padding:  25px;
+  border-top: 50%;
+  line-height: 100px;
+  text-align: end;
+  text-decoration: none;
+}
