@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { ProgramsComponent } from './components/programs/programs.component';
 import { ExperiencesComponent } from './components/experiences/experiences.component';
@@ -15,7 +14,6 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     MainComponent,
     ProgramsComponent,
     ExperiencesComponent,
