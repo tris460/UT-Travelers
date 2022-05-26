@@ -4,6 +4,7 @@
   z-index: 1;
   width: 100%;
   background-color: #2f7c72;
+  top: 0;
 }
 .logo > img {
   height: 100px;

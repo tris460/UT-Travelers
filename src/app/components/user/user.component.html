@@ -1,48 +1,55 @@
-<div>
+<div class="user">
   <!-- Alert -->
-  <div>
+  <div class="alert">
     <p>Remember that all the programs in here are from <a href="https://ccusa.com.mx/" target="_blank">CCUSA</a> agency.</p>
   </div>
-  <!-- Profile picture -->
-  <div>
-    <img src="../../../assets/no-image.png" alt="Profile picture">
-    <div>
-      <img src="../../../assets/icon-change.png" alt="Change photo">
+  <div class="flex-nowrap">
+    <div class="flex-wrap user-data">
+      <!-- Profile picture -->
+      <div class="profile">
+        <img src="../../../assets/no-image.png" class="profile-picture" alt="Profile picture">
+        <div>
+          <img src="../../../assets/icon-change.png" class="profile-change" alt="Change photo">
+        </div>
+      </div>
+      <!-- User personal info -->
+      <div class="info">
+        <p class="text">User name</p>
+        <p class="text">Career</p>
+        <p class="sh-letter">More <img src="../../../assets/icon-more.png" class="view view-more" alt="More"></p>
+        <p class="sh-letter">Change email</p>
+        <p class="sh-letter">Change password</p>
+        <p class="sh-letter">Change birthday</p>
+        <p class="sh-letter">Change name</p>
+        <p class="sh-letter">Change career</p>
+        <p class="sh-letter">Change phone number</p>
+        <p class="sh-letter danger">Delete my account</p>
+        <p class="sh-letter">Less <img src="../../../assets/icon-more.png" class="view view-less" alt="Less"></p>
+      </div>
     </div>
-  </div>
-  <!-- User info -->
-  <div>
-    <p>User name</p>
-    <p>Career</p>
-    <p>More</p>
-    <p>Change email</p>
-    <p>Change password</p>
-    <p>Change birthday</p>
-    <p>Change name</p>
-    <p>Change career</p>
-    <p>Change phone number</p>
-    <p>Delete my account</p>
-    <p>Less</p>
-  </div>
-  <!-- Programs - User -->
-  <div>
-    <p>My Programs</p>
-    <p>You don't have any register yet! :(</p>
-    <button type="button" class="btn btn-success">Add previous program</button>
-  </div>
-  <!-- Programs Admin -->
-  <div>
-    <p>Most Popular Programs</p>
-    <p>There're no popular programs.</p>
-  </div>
-  <!-- Questions -->
-  <div>
-    <p>My Questions</p>
-    <p>You don't have any question yet! :(</p>
-  </div>
-  <!-- Careers -->
-  <div>
-    <p>Most Common Careers</p>
-    <p>There're no careers yet.</p>
+    <!-- User info -->
+    <div class="flex-wrap">
+      <!-- Programs - User -->
+      <div class="programs">
+        <p class="text">My Programs</p>
+        <p class="sh-letter danger">You don't have any register yet! :(</p>
+        <button type="button" class="btn btn-success">Add previous program</button>
+      </div>
+      <!-- Programs Admin -->
+      <div class="programs">
+        <p class="text">Most Popular Programs</p>
+        <p class="sh-letter danger">There're no popular programs.</p>
+      </div>
+      <!-- Questions -->
+      <div class="questions">
+        <p class="text">My Questions</p>
+        <p class="sh-letter danger">You don't have any question yet! :(</p>
+      </div>
+      <!-- Careers -->
+      <div class="careers">
+        <p class="text">Most Common Careers</p>
+        <p class="sh-letter danger">There're no careers yet.</p>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,0 +1,66 @@
+.user {
+  position: relative;
+  top: 100px;
+}
+.alert {
+  background-color: #880b0b;
+  margin: 20px;
+  text-align: center;
+  padding-top: 30px;
+  line-height: 90%;
+}
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.text {
+  color: #000;
+  font-weight: bolder;
+}
+.sh-letter {
+  font-weight: 600;
+  color: #000;
+  font-size: 18px;
+  line-height: 90%;
+}
+.danger {
+  color: #da1e1e;
+  font-weight: 600;
+}
+.user-data {
+  min-width: 40%;
+}
+.profile {
+  padding: 30px;
+  display: inline-block;
+}
+.profile-picture {
+  height: 35vh;
+  border-radius: 50%;
+}
+.profile-change {
+  height: 8vh;
+  width: 9vh;
+  position: relative;
+  left: 75%;
+  top: -80px;
+  background-color: #008037;
+  border-radius: 50%;
+  padding: 10px;
+}
+.programs, .questions, .careers{
+  min-width: 35%;
+}
+.view {
+  width: 20px;
+}
+.view-less {
+  transform: rotate(270deg);
+}
+.view-more {
+  transform: rotate(90deg);
+}
