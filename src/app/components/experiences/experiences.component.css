@@ -1,0 +1,40 @@
+.experiences {
+  position: relative;
+  top: 100px
+}
+.experiences-list {
+  background-color: #11502c;
+  padding: 30px 0px;
+}
+.ind-experience {
+  padding: 30px 50px;
+  overflow: scroll;
+  overflow-x: hidden;
+  max-width: 30%;
+  max-height: 500px;
+  text-align: center;
+}
+
+.flex-nowrap {
+  justify-content: center;
+  width: 100vw;
+}
+.picture {
+  width: 150px;
+  padding: 10px;
+}
+.md-letter {
+  font-size: 18px;
+}
+.md-letter-20 {
+  font-size: 20px;
+}
+.contact {
+  background-color: #11502c;
+  padding: 20px;
+  padding-bottom: 5px;
+}
+.contact > p {
+  font-size: 14px;
+  text-align: center;
+}
