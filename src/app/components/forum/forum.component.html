@@ -1,31 +1,33 @@
-<div>
+<div class="forum">
   <!-- Title -->
-  <div>
+  <div class="title">
     <p>Forum</p>
   </div>
-  <!-- Search bar -->
-  <div>
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search question" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-    <button type="button" class="btn btn-light">Add question</button>
-    <button type="button" class="btn btn-light">Filter</button>
+  <div class="forum-content">
+    <!-- Search bar -->
+    <div class="search">
+      <p class="letter-25">Search question</p>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2 letter-25" type="search" placeholder="&#xf002;" aria-label="Search">
+        <button class="btn btn-light letter-25" type="submit">Search</button>
+      </form>
+      <button type="button" class="btn btn-light letter-25"><i class="fa-solid fa-plus"></i> Add question</button>
+      <button type="button" class="btn btn-light letter-25"><i class="fa-solid fa-sliders"></i> Filter</button>
+    </div>
+    <!-- Questions -->
+    <div class="questions-list">
+      <div class="questions">
+        <p><b>Question #1</b></p>
+        <p>Answer</p>
+      </div>
+    </div>
+    <!-- Paginator -->
+    <nav aria-label="Paginator" class="paginator">
+      <ul class="pagination pagination-lg justify-content-center">
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+      </ul>
+    </nav>
   </div>
-  <!-- Questions -->
-  <div>
-    <p><b>Question #1</b></p>
-    <p>Answer</p>
-    <hr>
-  </div>
-  <!-- Paginator -->
-  <nav aria-label="Paginator">
-    <ul class="pagination justify-content-center">
-      <li class="page-item active" aria-current="page">
-        <span class="page-link">1</span>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-    </ul>
-  </nav>
 </div>

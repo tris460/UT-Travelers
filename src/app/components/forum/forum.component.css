@@ -1,0 +1,57 @@
+.forum {
+  position: relative;
+  top: 100px;
+}
+.forum-content {
+  background-color: #008037;
+}
+.search {
+  padding: 0px 40px;
+}
+.search > p {
+  line-height: 90px;
+  padding-left: 10px;
+}
+.form-control {
+  height: 50px;
+  border: none;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  margin: 5px;
+}
+.letter-25 {
+  font-size: 25px;
+  height: 50px;
+}
+.btn {
+  padding: 5px 25px;
+  width: 12vw;
+  color: #11502c;
+  border: 1px solid #11502c;
+  background-color: #a8d6bc;
+  margin: 5px 10px;
+}
+.fa-solid {
+  text-align: left;
+}
+.questions-list {
+  margin: 30px 0px;
+}
+.questions {
+  background-color: #11502c;
+  margin: 10px 20px;
+  padding: 20px;
+}
+.paginator {
+  margin: 30px 0px;
+}
+.pagination > li > a {
+  background-color: #11502c;
+  color: #fff;
+  font-weight: 900;
+}
+.pagination > li.active > a {
+  background-color: #fff;
+  color: #11502c;
+  border: 1px solid #fff;
+}
