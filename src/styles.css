@@ -4,3 +4,34 @@ a, p {
   color: #fff;
   font-size: 25px;
 }
+.imgs {
+  width: 400px;
+}
+.title {
+  background-color: #2f7c72;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.text {
+  color: #000;
+  font-weight: bolder;
+}
+.sh-letter {
+  font-weight: 600;
+  color: #000;
+  font-size: 18px;
+  line-height: 90%;
+}
+.danger {
+  color: #da1e1e;
+  font-weight: 600;
+}

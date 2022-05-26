@@ -9,28 +9,6 @@
   padding-top: 30px;
   line-height: 90%;
 }
-.flex-wrap {
-  display: flex;
-  flex-wrap: wrap;
-}
-.flex-nowrap {
-  display: flex;
-  flex-wrap: nowrap;
-}
-.text {
-  color: #000;
-  font-weight: bolder;
-}
-.sh-letter {
-  font-weight: 600;
-  color: #000;
-  font-size: 18px;
-  line-height: 90%;
-}
-.danger {
-  color: #da1e1e;
-  font-weight: 600;
-}
 .user-data {
   min-width: 40%;
 }

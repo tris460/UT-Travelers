@@ -1,0 +1,8 @@
+.statistics {
+  position: relative;
+  top: 100px;
+}
+.chart {
+  width: 900px;
+  height: 650px;
+}
