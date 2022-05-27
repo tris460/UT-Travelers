@@ -24,3 +24,52 @@
 .links > a:hover {
   color: #00ffbfd7;
 }
+.menu-responsive {
+  display: none;
+}
+@media screen and (max-width: 1130px) {
+  .menu {
+    display: none;
+  }
+  .menu-responsive {
+    display: inline-grid;
+    background-color: #2f7c72;
+    z-index: 2;
+    border-end-end-radius: 15px;
+    position: absolute;
+    position: fixed;
+    left: -225px;
+  }
+  .menu-responsive:hover {
+    transition: all 1s;
+    left: 0px;
+  }
+  .info:active, .menu-responsive {
+    left: -225px;
+    transition: all 1s;
+  }
+  .logo {
+    display: inline;
+  }
+  .logo > img {
+    height: 190px;
+  }
+  .icon {
+    padding: 10px;
+    color: #fff;
+    display: inline;
+    font-size: 50px;
+    position: absolute;
+    left: 220px;
+    background-color: #2f7c72;
+    border-end-end-radius: 15px;
+  }
+  .links {
+    position: relative;
+    display: inline;
+    padding-bottom: 10px;
+  }
+  .links > a {
+    line-height: 2;
+  }
+}
