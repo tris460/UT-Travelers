@@ -29,6 +29,7 @@
 .commentaries {
   padding: 20px;
   margin: 20px;
+  border-right: 5px solid #fff;
 }
 .commentaries-input {
   width: 100%;
@@ -43,4 +44,33 @@
 }
 .ccusa-logo {
   margin: 33px 0px;
+}
+@media screen and (max-width: 1130px) {
+  .footer {
+    flex-wrap: wrap;
+  }
+  .info > p, .text-center, .commentaries-btn, .commentaries-input {
+    font-size: 18px;
+  }
+  .info-links {
+    height: 50px;
+  }
+  .mx-auto {
+    width: 200px;
+  }
+  .info {
+    padding-top: 5%;
+  }
+}
+@media screen and (max-width: 932px) {
+  .links {
+    width: 100%;
+  }
+  .link-ind {
+    max-width: 500px;
+  }
+  .commentaries, .links, .info {
+    border-right: none;
+    border-bottom: 3px solid #fff;
+  }
 }
