@@ -35,3 +35,11 @@ a, p {
   color: #da1e1e;
   font-weight: 600;
 }
+@media screen and (max-width: 1130px) {
+  .sh-letter {
+    font-size: 15px;
+  }
+  .text {
+    font-size: 20px;
+  }
+}

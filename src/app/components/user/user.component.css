@@ -32,6 +32,7 @@
 }
 .programs, .questions, .careers{
   min-width: 35%;
+  padding: 20px;
 }
 .view {
   width: 20px;
@@ -41,4 +42,18 @@
 }
 .view-more {
   transform: rotate(90deg);
+}
+@media screen and (max-width: 1130px) {
+  .user {
+    top: 0px;
+  }
+  .info {
+    padding: 0px 40px;
+  }
+  .profile-picture {
+    height: 25vh;
+  }
+  .alert > p  {
+    font-size: 18px;
+  }
 }
