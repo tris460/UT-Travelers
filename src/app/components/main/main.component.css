@@ -31,3 +31,22 @@
 .site-description {
   text-align: justify;
 }
+@media screen and (max-width: 1130px) {
+  .main {
+    top: 0px;
+    display: block;
+  }
+  .carousel {
+    width: 100%;
+  }
+  .d-block {
+    width: 100%;
+  }
+  .site-logo {
+    height: 30vh;
+    width: auto !important;
+  }
+  .site-slogan, .site-description {
+    font-size: 20px;;
+  }
+}
