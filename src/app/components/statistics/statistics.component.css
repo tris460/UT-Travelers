@@ -6,3 +6,8 @@
   width: 900px;
   height: 650px;
 }
+@media screen and (max-width: 1130px) {
+  .chart {
+    height: 500px;
+  }
+}
