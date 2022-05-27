@@ -25,3 +25,11 @@
 .col {
   margin: 3%;
 }
+@media screen and (max-width: 1130px) {
+  .ccusa {
+    opacity: 1;
+    left: 1%;
+    top: 1%;
+    height: 60px;
+  }
+}
