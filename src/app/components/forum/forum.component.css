@@ -58,6 +58,9 @@
   z-index: 1;
 }
 @media screen and (max-width: 1130px) {
+  .forum {
+    top: 0px;
+  }
   .letter-25, .questions > p {
     font-size: 18px;
   }

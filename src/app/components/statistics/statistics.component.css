@@ -6,8 +6,15 @@
   width: 900px;
   height: 650px;
 }
+.flex-wrap {
+  justify-content: center;
+}
 @media screen and (max-width: 1130px) {
+  .statistics {
+    top: 0px;
+  }
   .chart {
-    height: 500px;
+    width: 450px;
+    height: 325px;
   }
 }

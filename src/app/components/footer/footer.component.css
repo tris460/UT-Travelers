@@ -47,6 +47,7 @@
 }
 @media screen and (max-width: 1130px) {
   .footer {
+    top: -30px;
     flex-wrap: wrap;
   }
   .info > p, .text-center, .commentaries-btn, .commentaries-input {

@@ -26,6 +26,9 @@
   margin: 3%;
 }
 @media screen and (max-width: 1130px) {
+  .programs {
+    top: 0px;
+  }
   .ccusa {
     opacity: 1;
     left: 1%;
