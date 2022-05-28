@@ -1,0 +1,12 @@
+.login {
+  /* position: relative;
+  top: 100px; */
+  background-color: #000000;
+  height: 100vh;
+}
+.content {
+  background-color: #fff;
+  min-height: 40%;
+  margin-top: auto;
+  margin-bottom: auto;
+}

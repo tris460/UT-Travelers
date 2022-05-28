@@ -12,7 +12,7 @@
     <a href="#experiences">Experiences</a>
     <a href="#forum">Forum</a>
     <a href="#about">About</a>
-    <a routerLink="/login">Login</a>
+    <a routerLink="/login" (click)="login=true">Login</a>
   </div>
 </div>
 
@@ -34,14 +34,14 @@
     <a href="#experiences">Experiences</a><br>
     <a href="#forum">Forum</a><br>
     <a href="#about">About</a><br>
-    <a routerLink="/login">Login</a>
+    <a routerLink="/login" (click)="login=true">Login</a>
   </div>
 </div>
 
 <router-outlet></router-outlet>
 
 <!-- Information -->
-<div class="info">
+<div class="info" *ngIf="!login">
   <app-main id="home"></app-main>
   <app-user id="home"></app-user>
   <app-statistics id="statistics"></app-statistics>
