@@ -36,3 +36,11 @@
     height: 60px;
   }
 }
+@media screen and (max-width: 540px) {
+  .row {
+    display: block;
+  }
+  .ccusa {
+    top: 10px;
+  }
+}

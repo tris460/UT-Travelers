@@ -12,6 +12,7 @@
 @media screen and (max-width: 1130px) {
   .statistics {
     top: 0px;
+    flex-wrap: wrap;
   }
   .chart {
     width: 450px;

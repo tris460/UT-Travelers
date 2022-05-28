@@ -7,7 +7,6 @@
   margin: 20px;
   text-align: center;
   padding-top: 30px;
-  line-height: 90%;
 }
 .user-data {
   min-width: 40%;
@@ -55,5 +54,24 @@
   }
   .alert > p  {
     font-size: 18px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .flex-nowrap {
+    flex-wrap: wrap !important;
+    justify-content: center;
+  }
+  .user-data {
+    display: contents;
+  }
+  .info {
+    text-align: center;
+  }
+  .profile {
+    padding: 30px 10px;
+  }
+  .user-info {
+    display: contents;
+    text-align: center;
   }
 }
