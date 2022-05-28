@@ -10,6 +10,7 @@ import { ForumComponent } from './components/forum/forum.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserComponent } from './components/user/user.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     ForumComponent,
     FooterComponent,
     UserComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
