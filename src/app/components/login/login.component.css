@@ -20,8 +20,9 @@
 }
 .content-login {
   padding: 5%;
+  display: none;
 }
-.login-input > input {
+.login-input > input, .register-input > input {
   display: block;
   margin: 10px;
   width: calc(100% - 20px);
@@ -31,14 +32,17 @@
   border-bottom: 2px solid #2f7c72;
   margin-bottom: 40px;
 }
-.login-input > input:focus {
+.register-input > input {
+  margin-bottom: 25px;
+}
+.login-input > input:focus, .register-input > input:focus {
   outline: none;
   border: 2px solid #2f7c72;
 }
 .content-register {
-  display: none;
+  /* display: none; */
+  padding: 5%;
 }
-.register-input {}
 .btn-login {
   background-color: #2f7c72;
   font-family: 'Montserrat', sans-serif;
