@@ -26,6 +26,9 @@
 .menu-responsive {
   display: none;
 }
+router-outlet {
+  overflow: hidden;
+}
 @media screen and (max-width: 1130px) {
   .menu {
     display: none;
