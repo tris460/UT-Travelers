@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'UTTravelers';
-  login = false;
+
+  login: boolean;
+  showInfo: boolean;
+  rolUser: string;
+
+  constructor(private loginStatus: LoginService) {
+    this.login = loginStatus.login;
+    this.rolUser = loginStatus.rolUser;
+    this.showInfo = true;
+  }
 }

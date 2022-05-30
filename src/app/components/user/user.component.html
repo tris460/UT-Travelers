@@ -30,13 +30,13 @@
     <!-- User info -->
     <div class="flex-wrap user-info">
       <!-- Programs - User -->
-      <div class="programs">
+      <div class="programs" *ngIf="rolUser=='user'">
         <p class="text">My Programs</p>
         <p class="sh-letter danger">You don't have any register yet! :(</p>
         <button type="button" class="btn btn-success">Add previous program</button>
       </div>
       <!-- Programs Admin -->
-      <div class="programs">
+      <div class="programs" *ngIf="rolUser=='admin'">
         <p class="text">Most Popular Programs</p>
         <p class="sh-letter danger">There're no popular programs.</p>
       </div>
@@ -46,7 +46,7 @@
         <p class="sh-letter danger">You don't have any question yet! :(</p>
       </div>
       <!-- Careers -->
-      <div class="careers">
+      <div class="careers" *ngIf="rolUser=='admin'">
         <p class="text">Most Common Careers</p>
         <p class="sh-letter danger">There're no careers yet.</p>
       </div>
