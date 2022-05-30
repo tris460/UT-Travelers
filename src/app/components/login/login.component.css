@@ -1,6 +1,5 @@
 .login {
   background-color: #000000;
-  padding: 40px;
   padding-top: 110px;
   min-height: 100vh;
 }
@@ -11,29 +10,22 @@
   margin-bottom: auto;
   padding: 10px 5px;
 }
+.content-title {
+  background-color: #2f7c72;
+  text-align: center;
+}
 .flex-wrap {
   justify-content: space-around;
 }
-.buttons {
-  width: 100%;
-}
-.buttons > button {
-  width: 50%;
-  height: 60px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 25px;
-  background-color: #2f7c72;
-  color: #fff;
-  border-color: #fff;
-  border-radius: 10%;
-}
 .content-login, .content-register {
-  padding: 5%;
+  padding: 3%;
+  width: 50%;
+  display: block;
 }
 .login-input > input, .register-input > input {
   display: block;
   margin: 10px;
-  width: 100%;
+  width: 95%;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   border: none;
@@ -56,4 +48,15 @@
   padding: 10px;
   width: 150px;
   justify-content: center;
+}
+@media screen and (max-width: 1130px) {
+  .login {
+    padding: 50px 0px;
+  }
+  .flex-wrap {
+    display: block;
+  }
+  .content-login, .content-register {
+    width: 100%;
+  }
 }
