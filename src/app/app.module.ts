@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { ProgramsComponent } from './components/programs/programs.component';
 import { ExperiencesComponent } from './components/experiences/experiences.component';
+import { FormsModule } from '@angular/forms';
 import { ForumComponent } from './components/forum/forum.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserComponent } from './components/user/user.component';
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

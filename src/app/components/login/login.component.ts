@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiUserService } from 'src/app/services/api-user.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   registerPhone: string;
   registerCareer: string;
   users: Array<any>;
-  constructor(private apiUserService: ApiUserService) {
+  constructor(private apiUserService: ApiUserService, private router: Router) {
     this.loginEmail = '';
     this.loginPassword = '';
     this.registerEmail = '';
@@ -35,7 +35,20 @@ export class LoginComponent implements OnInit {
   login() {
     setTimeout(() => {
       this.users = this.apiUserService.information;
-      console.log(this.users);
+      const CORRECT_USER = this.users.filter(u => // If the credential are saved in the BD
+      u.strEmail === this.loginEmail && u.strPassword === this.loginPassword);
+
+      if (CORRECT_USER.length > 0) {
+        const USER_INFO = { // Object to save data in local storage
+          rol: CORRECT_USER[0].srtRol,
+          email: CORRECT_USER[0].strEmail
+        };
+        // Save login information in local storage
+        localStorage.setItem('userUTTraveler', JSON.stringify(USER_INFO));
+        this.router.navigate(["home"]);
+      } else {
+        alert("Incorrect credentials")
+      }
     }, 500);
   }
   ngOnInit(): void {

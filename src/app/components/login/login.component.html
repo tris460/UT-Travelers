@@ -8,8 +8,8 @@
         </div>
         <!-- Inputs -->
         <div class="login-input">
-          <input type="text" placeholder="Email" name="loginEmail" (ngModel)="loginEmail">
-          <input type="password" placeholder="Password" name="loginPassword" (ngModel)="loginPassword">
+          <input type="text" placeholder="Email" name="loginEmail" [(ngModel)]="loginEmail">
+          <input type="password" placeholder="Password" name="loginPassword" [(ngModel)]="loginPassword">
         </div>
         <!-- Button -->
         <button type="button" class="btn-login mx-auto d-flex" (click)="login()">Login</button>
