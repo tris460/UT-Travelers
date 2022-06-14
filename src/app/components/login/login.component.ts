@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
 
       if (CORRECT_USER.length > 0) {
         const USER_INFO = { // Object to save data in local storage
-          rol: CORRECT_USER[0].srtRol,
+          rol: CORRECT_USER[0].strRol,
           email: CORRECT_USER[0].strEmail
         };
         // Save login information in local storage
