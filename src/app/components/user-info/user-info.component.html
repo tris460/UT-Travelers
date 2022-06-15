@@ -1,0 +1,48 @@
+<!-- Menu bar -->
+<div class="menu">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="../../../assets/logo-green.png" alt="UT-Travelers logo">
+  </div>
+  <!-- Links -->
+  <div class="links">
+    <a [routerLink]="['/user']" fragment="home-u">Home</a>
+    <a [routerLink]="['/user']" fragment="programs-u">Programs</a>
+    <a [routerLink]="['/user']" fragment="experiences-u">Experiences</a>
+    <a [routerLink]="['/user']" fragment="forum-u">Forum</a>
+    <a [routerLink]="['/user']" fragment="about-u">About</a>
+    <a>Logout</a>
+  </div>
+</div>
+
+<!-- Menu responsive -->
+<div class="menu-responsive">
+  <!-- Icon -->
+  <div class="icon">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <!-- Logo -->
+  <div class="logo mx-auto d-block">
+    <img src="../../../assets/logo-green.png" alt="UT-Travelers logo">
+  </div>
+  <!-- Links -->
+  <div class="links">
+    <br><a [routerLink]="['/user']" fragment="home-u">Home</a><br>
+    <a [routerLink]="['/user']" fragment="programs-u">Programs</a><br>
+    <a [routerLink]="['/user']" fragment="experiences-u">Experiences</a><br>
+    <a [routerLink]="['/user']" fragment="forum-u">Forum</a><br>
+    <a [routerLink]="['/user']" fragment="about-u">About</a><br>
+    <a>Logout</a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<!-- Information -->
+<div class="info">
+  <app-user id="home-u"></app-user>
+  <app-programs id="programs-u"></app-programs>
+  <app-experiences id="experiences-u"></app-experiences>
+  <app-forum id="forum-u"></app-forum>
+  <app-footer id="about-u"></app-footer>
+</div>

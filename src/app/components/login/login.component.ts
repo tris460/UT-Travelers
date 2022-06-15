@@ -45,9 +45,18 @@ export class LoginComponent implements OnInit {
         };
         // Save login information in local storage
         localStorage.setItem('userUTTraveler', JSON.stringify(USER_INFO));
-        this.router.navigate(["home"]);
+        switch (CORRECT_USER[0].strRol) {
+          case "user":
+            this.router.navigate(["user"]);
+            break;
+          case "admin":
+            this.router.navigate(["admin"]);
+            break;
+          default:
+            this.router.navigate(["home"]);
+        }
       } else {
-        alert("Incorrect credentials")
+        alert("Incorrect credentials");
       }
     }, 500);
   }

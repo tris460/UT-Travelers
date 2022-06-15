@@ -13,6 +13,9 @@ import { UserComponent } from './components/user/user.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GeneralComponent } from './components/general/general.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { AdminInfoComponent } from './components/admin-info/admin-info.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     UserComponent,
     StatisticsComponent,
     LoginComponent,
+    GeneralComponent,
+    UserInfoComponent,
+    AdminInfoComponent,
   ],
   imports: [
     BrowserModule,

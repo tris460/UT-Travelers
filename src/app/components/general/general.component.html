@@ -1,0 +1,43 @@
+<!-- Menu bar -->
+<div class="menu">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="../../../assets/logo-green.png" alt="UT-Travelers logo">
+  </div>
+  <!-- Links -->
+  <div class="links">
+    <a [routerLink]="['/home']" fragment="home">Home</a>
+    <a [routerLink]="['/home']" fragment="experiences">Experiences</a>
+    <a [routerLink]="['/home']" fragment="forum">Forum</a>
+    <a [routerLink]="['/home']" fragment="about">About</a>
+    <a routerLink="/login">Login</a>
+  </div>
+</div>
+
+<!-- Menu responsive -->
+<div class="menu-responsive">
+  <!-- Icon -->
+  <div class="icon">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <!-- Logo -->
+  <div class="logo mx-auto d-block">
+    <img src="../../../assets/logo-green.png" alt="UT-Travelers logo">
+  </div>
+  <!-- Links -->
+  <div class="links">
+    <br><a [routerLink]="['/home']" fragment="home">Home</a><br>
+    <a [routerLink]="['/home']" fragment="experiences">Experiences</a><br>
+    <a [routerLink]="['/home']" fragment="forum">Forum</a><br>
+    <a [routerLink]="['/home']" fragment="about">About</a><br>
+    <a routerLink="/login" routerLinkActive="router-link-active" >Login</a>
+  </div>
+</div>
+
+<!-- Information -->
+<div class="info">
+  <app-main id="home"></app-main>
+  <app-experiences id="experiences"></app-experiences>
+  <app-forum id="forum"></app-forum>
+  <app-footer id="about"></app-footer>
+</div>
