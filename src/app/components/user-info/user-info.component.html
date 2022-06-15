@@ -11,7 +11,7 @@
     <a [routerLink]="['/user']" fragment="experiences-u">Experiences</a>
     <a [routerLink]="['/user']" fragment="forum-u">Forum</a>
     <a [routerLink]="['/user']" fragment="about-u">About</a>
-    <a>Logout</a>
+    <a (click)="loginService.logout()" href="">Logout</a>
   </div>
 </div>
 
@@ -32,7 +32,7 @@
     <a [routerLink]="['/user']" fragment="experiences-u">Experiences</a><br>
     <a [routerLink]="['/user']" fragment="forum-u">Forum</a><br>
     <a [routerLink]="['/user']" fragment="about-u">About</a><br>
-    <a>Logout</a>
+    <a (click)="loginService.logout()" href="">Logout</a>
   </div>
 </div>
 
