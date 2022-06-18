@@ -58,17 +58,17 @@
         </div>
         <!-- Inputs -->
         <div class="register-input">
-          <input type="email" placeholder="Institutional email" name="registerEmail" (ngModel)="registerEmail">
-          <input type="password" placeholder="Password" name="registerPassword" (ngModel)="registerPassword">
-          <input type="password" placeholder="Confirm password" name="registerPasswordConfName" (ngModel)="registerPasswordConf">
-          <input type="text" placeholder="Name" name="registerName" (ngModel)="registerName">
-          <input type="text" placeholder="Last name" name="registerLastName" (ngModel)="registerLastName">
-          <input type="date" placeholder="Birthday" name="registerBirthday" (ngModel)="registerBirthday">
-          <input type="tel" placeholder="Phone" name="registerPhone" (ngModel)="registerPhone">
-          <input type="text" placeholder="Career" name="registerCareer" (ngModel)="registerCareer">
+          <input type="email" placeholder="Institutional email" name="registerEmail" [(ngModel)]="registerEmail">
+          <input type="password" placeholder="Password" name="registerPassword" [(ngModel)]="registerPassword">
+          <input type="password" placeholder="Confirm password" name="registerPasswordConfName" [(ngModel)]="registerPasswordConf">
+          <input type="text" placeholder="Name" name="registerName" [(ngModel)]="registerName">
+          <input type="text" placeholder="Last name" name="registerLastName" [(ngModel)]="registerLastName">
+          <input type="date" placeholder="Birthday" name="registerBirthday" [(ngModel)]="registerBirthday">
+          <input type="tel" placeholder="Phone" name="registerPhone" [(ngModel)]="registerPhone">
+          <input type="text" placeholder="Career" name="registerCareer" [(ngModel)]="registerCareer">
         </div>
         <!-- Button -->
-        <button type="button" class="btn-login mx-auto d-flex">Register</button>
+        <button type="button" class="btn-login mx-auto d-flex" (click)="newUser()">Register</button>
       </div>
     </div>
   </div>

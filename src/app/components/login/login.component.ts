@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  date = new Date();
   loginEmail: string;
   loginPassword: string;
   registerEmail: string;
@@ -59,6 +60,35 @@ export class LoginComponent implements OnInit {
         alert("Incorrect credentials");
       }
     }, 500);
+  }
+  newUser() {
+    let fieldsVerified = this.verifyFields();
+    if(!fieldsVerified) {
+      alert('Complete the fields correctly');
+      return;
+    }
+    const NEW_USER = {
+      strEmail: this.registerEmail,
+      strPassword: this.registerPassword,
+      strName: this.registerName,
+      strLastName: this.registerLastName,
+      dateBirth: this.registerBirthday,
+      strPhone: this.registerPhone,
+      strCareer: this.registerCareer
+    }
+    console.log(NEW_USER)
+  }
+  verifyFields() {
+    if (this.registerEmail !== ''
+      && this.registerPassword !== ''
+      && this.registerName !== ''
+      && this.registerLastName !== ''
+      && this.registerPhone !== ''
+      && this.registerCareer !== '') {
+        return true;
+      } else {
+        return false;
+      }
   }
   ngOnInit(): void {
   }
