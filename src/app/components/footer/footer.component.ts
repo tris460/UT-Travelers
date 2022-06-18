@@ -6,9 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
-
+  commentary: string;
+  constructor() {
+    this.commentary = '';
+  }
+  addCommentary() {
+    console.log(this.commentary);
+  }
   ngOnInit(): void {
   }
 

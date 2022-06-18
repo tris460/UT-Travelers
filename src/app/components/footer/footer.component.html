@@ -2,8 +2,8 @@
   <!-- Commentaries -->
   <div class="commentaries flex-fill">
     <p class="text-center">Send us your commentaries:</p>
-    <textarea type="text" rows="5" class="commentaries-input"></textarea>
-    <button type="button" class="btn btn-success commentaries-btn mx-auto d-block">Send</button>
+    <textarea type="text" rows="5" class="commentaries-input" [(ngModel)]="commentary"></textarea>
+    <button type="button" class="btn btn-success commentaries-btn mx-auto d-block" (click)="addCommentary()">Send</button>
   </div>
   <!-- Links -->
   <div class="links flex-wrap">
