@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiForumService } from 'src/app/services/api-forum.service';
 
 @Component({
   selector: 'app-forum',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForumComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiForumService: ApiForumService) { }
 
   ngOnInit(): void {
   }
