@@ -25,6 +25,13 @@ export class ApiForumService {
         console.error(err);
         this.questions = [];
       }
+    });
+  }
+  addQuestion(data: object) {
+    this.http.post(this.urlApi, data).subscribe({
+      error: err => {
+        console.error(err);
+      }
     })
   }
 }
