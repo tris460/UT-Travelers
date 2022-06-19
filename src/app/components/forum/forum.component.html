@@ -15,10 +15,16 @@
       <button type="button" class="btn btn-light letter-25"><i class="fa-solid fa-sliders"></i> Filter</button>
     </div>
     <!-- Questions -->
-    <div class="questions-list">
+    <div class="questions-list" *ngFor="let q of questions; let i = index">
       <div class="questions">
-        <p><b>Question #1</b></p>
-        <p>Answer</p>
+        <p><b>#{{i+1}} {{q.strQuestion}}</b></p>
+        <p>{{q.strStatus}} | {{q.dateDate.slice(0,10)}}</p>
+        <p>{{q.strTopic}}</p><br>
+        <p *ngIf="q.arrAnswers.length == 0" class="no-data">This question does not have any answer yet. Be the first one answering.</p>
+        <div *ngFor="let a of q.arrAnswers">
+          <p>{{a}}</p>
+        </div>
+        <button class="btn btn-light letter-25" type="submit">Answer</button>
       </div>
     </div>
     <!-- Paginator -->

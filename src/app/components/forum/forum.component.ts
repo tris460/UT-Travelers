@@ -7,8 +7,12 @@ import { ApiForumService } from 'src/app/services/api-forum.service';
   styleUrls: ['./forum.component.css']
 })
 export class ForumComponent implements OnInit {
-
-  constructor(private apiForumService: ApiForumService) { }
+  questions: Array<any> = [];
+  constructor(private apiForumService: ApiForumService) {
+    setTimeout(() => {
+      this.questions = apiForumService.questions;
+    }, 1000);
+  }
 
   ngOnInit(): void {
   }
