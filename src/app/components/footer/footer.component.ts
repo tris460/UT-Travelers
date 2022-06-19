@@ -7,13 +7,18 @@ import { ApiCommentariesService } from 'src/app/services/api-commentaries.servic
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  commentary: string;
-  date = new Date();
+  commentary: string; // What the user wrote
+  date = new Date(); // When the user wrote the commentary
   constructor(private apiCommentariesService: ApiCommentariesService) {
     this.commentary = '';
   }
+  /**
+   * This function saves a new commentary in the database.
+   * @returns Nothing if the commentary is an empty string, else,
+   * just save the string.
+   */
   addCommentary() {
-    if(this.commentary === '') {
+    if(this.commentary === '') { // Validate the commentary isn't an empty string
       alert("Write a commentary first");
       return;
     }
@@ -21,7 +26,7 @@ export class FooterComponent implements OnInit {
       strCommentary: this.commentary,
       dateDate: this.date
     }
-    this.apiCommentariesService.saveData(NEW_COMMENTARY);
+    this.apiCommentariesService.saveData(NEW_COMMENTARY); // Save the string in the DB
     alert("Commentary sended correctly! :)");
     this.commentary = '';
   }
