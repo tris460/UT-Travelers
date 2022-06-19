@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiCommentariesService } from 'src/app/services/api-commentaries.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,11 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   commentary: string;
-  constructor() {
+  date = new Date();
+  constructor(private apiCommentariesService: ApiCommentariesService) {
     this.commentary = '';
   }
   addCommentary() {
-    console.log(this.commentary);
+    if(this.commentary === '') {
+      alert("Write a commentary first");
+      return;
+    }
+    const NEW_COMMENTARY = {
+      strCommentary: this.commentary,
+      dateDate: this.date
+    }
+    this.apiCommentariesService.saveData(NEW_COMMENTARY);
+    alert("Commentary sended correctly! :)");
+    this.commentary = '';
   }
   ngOnInit(): void {
   }
