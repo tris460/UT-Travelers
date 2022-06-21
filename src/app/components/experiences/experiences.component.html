@@ -9,22 +9,10 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="flex-nowrap">
-            <div class="ind-experience">
+            <div class="ind-experience" *ngFor="let exp of experiencesList">
               <img src="../../../assets/no-image.png" class="mx-auto d-block picture d-block" alt="User image">
-              <p class="md-letter"><i>Student's experience</i></p>
-              <p class="md-letter-20">-Student's name</p>
-              <a class="md-letter-20">Contact</a>
-            </div>
-            <div class="ind-experience">
-              <img src="../../../assets/no-image.png" class="mx-auto d-block picture d-block" alt="User image">
-              <p class="md-letter"><i>Student's experience</i></p>
-              <p class="md-letter-20">-Student's name</p>
-              <a class="md-letter-20">Contact</a>
-            </div>
-            <div class="ind-experience">
-              <img src="../../../assets/no-image.png" class="mx-auto d-block picture d-block" alt="User image">
-              <p class="md-letter"><i>Student's experience</i></p>
-              <p class="md-letter-20">-Student's name</p>
+              <p class="md-letter"><i>"{{exp.strDescription}}"</i></p>
+              <p class="md-letter-20">-{{exp.strName}}</p>
               <a class="md-letter-20">Contact</a>
             </div>
           </div>
@@ -42,6 +30,6 @@
   </div>
   <!-- Contact -->
   <div class="contact">
-    <p>Want to add your experience? <u>Contact us</u></p>
+    <p>Want to add your experience? <a href="mailto:trism460@gmail.com?Subject=Want%20to%20add%20my%20experience%20-UTTravelers" class="contact-mail">Contact us</a></p>
   </div>
 </div>

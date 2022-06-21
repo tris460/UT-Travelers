@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiExperiencesService } from 'src/app/services/api-experiences.service';
 
 @Component({
   selector: 'app-experiences',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experiences.component.css']
 })
 export class ExperiencesComponent implements OnInit {
+  experiencesList: Array<any> = [];
 
-  constructor() { }
+  constructor(private apiExperiencesService: ApiExperiencesService) {
+    setTimeout(() => {
+      this.experiencesList = apiExperiencesService.experiences;
+      console.log(this.experiencesList)
+    }, 1000);
+  }
 
   ngOnInit(): void {
   }

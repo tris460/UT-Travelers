@@ -34,8 +34,8 @@
   padding: 20px;
   padding-bottom: 5px;
 }
-.contact > p {
-  font-size: 14px;
+.contact > p, .contact-mail {
+  font-size: 14px !important;
   text-align: center;
 }
 @media screen and (max-width: 1130px) {
