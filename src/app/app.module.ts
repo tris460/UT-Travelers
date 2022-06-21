@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GeneralComponent } from './components/general/general.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { AdminInfoComponent } from './components/admin-info/admin-info.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AdminInfoComponent } from './components/admin-info/admin-info.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
     FormsModule
   ],
   providers: [],

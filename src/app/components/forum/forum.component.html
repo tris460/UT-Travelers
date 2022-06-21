@@ -8,8 +8,7 @@
     <div class="search">
       <p class="letter-25">Search question</p>
       <form class="d-flex" role="search">
-        <input class="form-control me-2 letter-25" type="search" placeholder="&#xf002;" aria-label="Search">
-        <button class="btn btn-light letter-25" type="submit">Search</button>
+        <input class="form-control me-2 letter-25" type="search" placeholder="&#xf002; Search question" aria-label="Search" [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}">
       </form>
       <form *ngIf="showFormAdd">
         <input type="text" class="form-control me-2 letter-25" placeholder="Question" [(ngModel)]="newQuestion" [ngModelOptions]="{standalone: true}">
@@ -31,9 +30,9 @@
       </select>
     </div>
     <!-- Questions -->
-    <div class="questions-list" *ngFor="let q of questions; let i = index">
+    <div class="questions-list" *ngFor="let q of questions | filter:searchText">
       <div class="questions">
-        <p><b>#{{i+1}} {{q.strQuestion}}</b></p>
+        <p><b>{{q.strQuestion}}</b></p>
         <p>{{q.strStatus}} | {{q.dateDate.slice(0,10)}}</p>
         <p>{{q.strTopic}}</p><br>
         <p *ngIf="q.arrAnswers.length == 0" class="no-data" (click)="addQuestion()">This question does not have any answer yet. Be the first one answering.</p>

@@ -14,6 +14,7 @@ export class ForumComponent implements OnInit {
   newStatus: string;
   newTopic: string;
   filterBy: any;
+  searchText: any = '';
 
   constructor(private apiForumService: ApiForumService) {
     this.showFormAdd = false;
