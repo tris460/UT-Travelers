@@ -9,11 +9,11 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="flex-nowrap">
-            <div class="ind-experience" *ngFor="let exp of experiencesList">
+            <div class="ind-experience" *ngFor="let exp of experiencesList; let i=index">
               <img src="../../../assets/no-image.png" class="mx-auto d-block picture d-block" alt="User image">
               <p class="md-letter"><i>"{{exp.strDescription}}"</i></p>
               <p class="md-letter-20">-{{exp.strName}}</p>
-              <a class="md-letter-20">Contact</a>
+              <a class="md-letter-20" (click)="getContactInformation(i)">Contact</a>
             </div>
           </div>
         </div>

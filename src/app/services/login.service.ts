@@ -13,7 +13,8 @@ export class LoginService {
     this.rolUser = '';
   }
   logout() {
-    localStorage.removeItem("userUTraveler");
+    localStorage.removeItem("userUTTraveler");
     this.router.navigate(["home"]);
+    window.location.reload();
   }
 }
