@@ -19,7 +19,16 @@
         <button type="button" class="btn btn-danger letter-25" (click)="showFormAdd = false"><i class="fa-solid fa-cancel"></i> Cancel</button>
       </form>
       <button type="button" class="btn btn-light letter-25" (click)="showForm()"><i class="fa-solid fa-plus"></i> Add</button>
-      <button type="button" class="btn btn-light letter-25"><i class="fa-solid fa-sliders"></i> Filter</button>
+      <select class="form-select letter-25" id="selectFilter" (change)="filterQuestions()">
+        <option selected value="1.0">Filter</option>
+        <option value="1.1">Status: Solved</option>
+        <option value="1.2">Status: Unsolved</option>
+        <option value="1.3">Status: Urgent</option>
+        <option value="1.4">Status: Without answers</option>
+        <option value="2.1">Topic: Costs</option>
+        <option value="2.2">Topic: Dates</option>
+        <option value="2.3">Topic: Others</option>
+      </select>
     </div>
     <!-- Questions -->
     <div class="questions-list" *ngFor="let q of questions; let i = index">

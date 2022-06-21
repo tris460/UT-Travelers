@@ -66,6 +66,16 @@
   color: #ffffff;
   text-decoration: underline;
 }
+.form-select {
+  background-color: #a8d6bc;
+  display: inline;
+  min-width: 300px;
+  max-width: 80vw;
+  padding: 10px;
+  height: 50px;
+  position: relative;
+  top: 10px;
+}
 @media screen and (max-width: 1130px) {
   .forum {
     top: 0px;
