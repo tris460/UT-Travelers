@@ -42,13 +42,9 @@
         <button class="btn btn-light letter-25" type="submit">Answer</button>
       </div>
     </div>
-    <!-- Paginator -->
-    <nav aria-label="Paginator" class="paginator">
-      <ul class="pagination pagination-lg justify-content-center">
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-      </ul>
-    </nav>
+    <div class="view-more">
+      <p (click)="viewMore()" *ngIf="!allQuestionsVisible"><i class="fa-solid fa-caret-down"></i> View More</p>
+      <p (click)="viewLess()" *ngIf="allQuestionsVisible"><i class="fa-solid fa-caret-up"></i> View Less</p>
+    </div>
   </div>
 </div>

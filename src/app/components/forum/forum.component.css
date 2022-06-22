@@ -45,20 +45,15 @@
   margin: 10px 20px;
   padding: 20px;
 }
-.paginator {
+.view-more {
   margin: 30px 0px;
-  border: 3px solid #008037;
-}
-.pagination > li > a {
-  background-color: #11502c;
   color: #fff;
-  font-weight: 900;
+  text-align: center;
+  padding: 30px;
 }
-.pagination > li.active > a {
-  background-color: #fff;
-  color: #11502c;
-  border: 1px solid #fff;
-  z-index: 1;
+.view-more:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 .no-data {
   text-align: center;

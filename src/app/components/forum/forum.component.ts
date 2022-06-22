@@ -15,6 +15,9 @@ export class ForumComponent implements OnInit {
   newTopic: string;
   filterBy: any;
   searchText: any = '';
+  totalQuestionsNumber: number = 0;
+  showXQuestions: number = 3;
+  allQuestionsVisible: boolean = false;
 
   constructor(private apiForumService: ApiForumService) {
     this.showFormAdd = false;
@@ -25,6 +28,13 @@ export class ForumComponent implements OnInit {
     setTimeout(() => {
       this.questions = apiForumService.questions;
       this.ALL_QUESTIONS = this.questions;
+      this.totalQuestionsNumber = this.ALL_QUESTIONS.length;
+      if(this.ALL_QUESTIONS.length >= 3){
+        this.questions = this.ALL_QUESTIONS.slice(0,this.showXQuestions);
+      } else {
+        this.showXQuestions = this.totalQuestionsNumber;
+        this.allQuestionsVisible = true;
+      }
     }, 1000);
   }
 
@@ -73,6 +83,20 @@ export class ForumComponent implements OnInit {
           return this.questions;
       }
     });
+  }
+  viewMore() {
+    this.showXQuestions += 3;
+    this.questions = this.ALL_QUESTIONS.slice(0,this.showXQuestions);
+    if(this.showXQuestions >= this.totalQuestionsNumber) {
+      this.allQuestionsVisible = true;
+    }
+  }
+  viewLess() {
+    this.showXQuestions -= 3;
+    this.questions = this.ALL_QUESTIONS.slice(0,-this.showXQuestions);
+    if(this.showXQuestions <= 3) {
+      this.allQuestionsVisible = false;
+    }
   }
   ngOnInit(): void {
   }
