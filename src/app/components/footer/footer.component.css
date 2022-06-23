@@ -9,7 +9,7 @@
   text-align: center;
   padding: 20px;
 }
-.links {
+.link {
   margin: 20px;
   padding: 20px;
   border-right: 5px solid #fff;
@@ -63,14 +63,19 @@
     padding-top: 5%;
   }
 }
+@media screen and (max-width: 1000px) {
+  .link {
+    width: 100vw;
+  }
+}
 @media screen and (max-width: 932px) {
-  .links {
+  .link {
     width: 100%;
   }
   .link-ind {
     max-width: 500px;
   }
-  .commentaries, .links, .info {
+  .commentaries, .link, .info {
     border-right: none;
     border-bottom: 3px solid #fff;
   }
