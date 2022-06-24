@@ -18,6 +18,7 @@ export class ForumComponent implements OnInit {
   totalQuestionsNumber: number = 0;
   showXQuestions: number = 3;
   allQuestionsVisible: boolean = false;
+  questionAnswer: string;
 
   constructor(private apiForumService: ApiForumService) {
     this.showFormAdd = false;
@@ -25,6 +26,7 @@ export class ForumComponent implements OnInit {
     this.newStatus = '';
     this.newTopic = '';
     this.filterBy = '';
+    this.questionAnswer = '';
     setTimeout(() => {
       this.questions = apiForumService.questions;
       this.ALL_QUESTIONS = this.questions;
@@ -97,6 +99,22 @@ export class ForumComponent implements OnInit {
     if(this.showXQuestions <= 3) {
       this.allQuestionsVisible = false;
     }
+  }
+  addAnswer(index: number) {
+    let question = this.questions[index];
+    question.arrAnswers.push(this.questionAnswer);
+    let idQuestion = question._id;
+    const EDITED_QUESTION = {
+      strStatus: question.strStatus,
+      arrAnswers: question.arrAnswers,
+      strTopic: question.strTopic,
+      strQuestion: question.strQuestion,
+      dateDate: question.dateDate,
+      idUser: question.idUser,
+    };
+    this.apiForumService.editQuestion(EDITED_QUESTION, idQuestion);
+    alert("Answer added correctly");
+    this.questionAnswer = '';
   }
   ngOnInit(): void {
   }

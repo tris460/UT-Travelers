@@ -30,16 +30,17 @@
       </select>
     </div>
     <!-- Questions -->
-    <div class="questions-list" *ngFor="let q of questions | filter:searchText">
+    <div class="questions-list" *ngFor="let q of questions | filter:searchText; let i = index">
       <div class="questions">
         <p><b>{{q.strQuestion}}</b></p>
         <p>{{q.strStatus}} | {{q.dateDate.slice(0,10)}}</p>
         <p>{{q.strTopic}}</p><br>
-        <p *ngIf="q.arrAnswers.length == 0" class="no-data" (click)="addQuestion()">This question does not have any answer yet. Be the first one answering.</p>
+        <p *ngIf="q.arrAnswers.length == 0" class="no-data">This question does not have any answer yet. Be the first one answering.</p>
         <div *ngFor="let a of q.arrAnswers">
           <p>{{a}}</p>
         </div>
-        <button class="btn btn-light letter-25" type="submit">Answer</button>
+        <input class="textfield" placeholder="Write your answer here" class="textfield_answer" [(ngModel)]="questionAnswer" [ngModelOptions]="{standalone: true}"><br>
+        <button class="btn btn-light letter-25" type="submit" (click)="addAnswer(i)">Answer</button>
       </div>
     </div>
     <div class="view-more">

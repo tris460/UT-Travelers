@@ -32,6 +32,18 @@ export class ApiForumService {
       error: err => {
         console.error(err);
       }
+    });
+  }
+  editQuestion(data: object, id: string) {
+    this.http.put(`${this.urlApi}/${id}`, data).subscribe({
+      next: res => {
+        setTimeout(() => {
+          this.getData();
+        }, 500);
+      },
+      error: err => {
+        console.error(err);
+      }
     })
   }
 }
