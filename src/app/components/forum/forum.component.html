@@ -36,7 +36,7 @@
         <p>{{q.strStatus}} | {{q.dateDate.slice(0,10)}}</p>
         <p>{{q.strTopic}}</p><br>
         <p *ngIf="q.arrAnswers.length == 0" class="no-data">This question does not have any answer yet. Be the first one answering.</p>
-        <div *ngFor="let a of q.arrAnswers">
+        <div *ngFor="let a of q.arrAnswers" class="answers">
           <p>{{a}}</p>
         </div>
         <input class="textfield" placeholder="Write your answer here" class="textfield_answer" [(ngModel)]="questionAnswer" [ngModelOptions]="{standalone: true}"><br>
