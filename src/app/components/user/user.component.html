@@ -7,24 +7,24 @@
     <div class="flex-wrap user-data">
       <!-- Profile picture -->
       <div class="profile">
-        <img src="../../../assets/no-image.png" class="profile-picture" alt="Profile picture">
+        <img id="Profile-Picture" src="../../../assets/no-image.png" class="profile-picture" alt="Profile picture">
         <div>
           <img src="../../../assets/icon-change.png" class="profile-change" alt="Change photo">
         </div>
       </div>
       <!-- User personal info -->
       <div class="info">
-        <p class="text">User name</p>
-        <p class="text">Career</p>
-        <p class="sh-letter">More <img src="../../../assets/icon-more.png" class="view view-more" alt="More"></p>
-        <p class="sh-letter">Change email</p>
-        <p class="sh-letter">Change password</p>
-        <p class="sh-letter">Change birthday</p>
-        <p class="sh-letter">Change name</p>
-        <p class="sh-letter">Change career</p>
-        <p class="sh-letter">Change phone number</p>
-        <p class="sh-letter danger">Delete my account</p>
-        <p class="sh-letter">Less <img src="../../../assets/icon-more.png" class="view view-less" alt="Less"></p>
+        <p class="text">{{userName}}</p>
+        <p class="text">{{career}}</p>
+        <p class="sh-letter" (click)="showInfo = !showInfo" *ngIf="!showInfo">More <img src="../../../assets/icon-more.png" class="view view-more" alt="More"></p>
+        <div *ngIf="showInfo">
+          <p class="sh-letter">Email: {{emailActualUser}}</p>
+          <p class="sh-letter">Change password</p>
+          <p class="sh-letter">Birthday: {{birthday}}</p>
+          <p class="sh-letter">Phone: {{phoneNumber}}</p>
+          <p class="sh-letter danger" (click)="deleteAccount()">Delete my account</p>
+          <p class="sh-letter" (click)="showInfo = !showInfo">Less <img src="../../../assets/icon-more.png" class="view view-less" alt="Less"></p>
+        </div>
       </div>
     </div>
     <!-- User info -->

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiUserService } from 'src/app/services/api-user.service';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   registerPhone: string;
   registerCareer: string;
   users: Array<any>;
-  constructor(private apiUserService: ApiUserService, private router: Router) {
+  constructor(private apiUserService: ApiUserService, private router: Router, private LoginService: LoginService) {
     this.loginEmail = '';
     this.loginPassword = '';
     this.registerEmail = '';

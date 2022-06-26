@@ -6,11 +6,9 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
   login: boolean;
-  rolUser: string;
 
   constructor(private router: Router) {
     this.login = false;
-    this.rolUser = '';
   }
   logout() {
     localStorage.removeItem("userUTTraveler");

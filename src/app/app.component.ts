@@ -9,13 +9,5 @@ import { LoginService } from 'src/app/services/login.service';
 export class AppComponent {
   title = 'UTTravelers';
 
-  login: boolean;
-  showInfo: boolean;
-  rolUser: string;
-
-  constructor(private loginStatus: LoginService) {
-    this.login = loginStatus.login;
-    this.rolUser = loginStatus.rolUser;
-    this.showInfo = true;
-  }
+  constructor(private loginStatus: LoginService) { }
 }
