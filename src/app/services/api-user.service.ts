@@ -27,4 +27,16 @@ export class ApiUserService {
         }
       });
   }
+  editUser(id: string, data: object) {
+    this.http.put(`${this.urlApi}/${id}`, data).subscribe({
+      next: res => {
+        setTimeout(() => {
+          this.getData();
+        }, 500);
+      },
+      error: err => {
+        console.error(err);
+      }
+    })
+  }
 }

@@ -11,6 +11,19 @@
 .user-data {
   min-width: 40%;
 }
+input {
+  display: block;
+  margin: 10px;
+  width: 95%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  border: none;
+  border-bottom: 2px solid #2f7c72;
+}
+input:focus {
+  outline: none;
+  border: 2px solid #2f7c72;
+}
 .profile {
   padding: 30px;
   display: inline-block;

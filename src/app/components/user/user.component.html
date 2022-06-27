@@ -32,8 +32,15 @@
       <!-- Programs - User -->
       <div class="programs" *ngIf="rolUser=='user'">
         <p class="text">My Programs</p>
-        <p class="sh-letter danger">You don't have any register yet! :(</p>
-        <button type="button" class="btn btn-success">Add previous program</button>
+        <ul *ngFor="let p of programs">
+          <li class="sh-letter">{{p}}</li>
+          </ul>
+        <p class="sh-letter danger" *ngIf="programs.length == 0">You don't have any register yet! :(</p>
+        <a class="sh-letter" (click)="addPrevProgram = !addPrevProgram">Want to add another program?</a>
+        <div *ngIf="addPrevProgram">
+          <input type="text" placeholder="Previous program's name" [(ngModel)]="previousProgram"><br>
+          <button type="button" class="btn btn-success" (click)="addPreviousProgram()">Add previous program</button>
+        </div>
       </div>
       <!-- Programs Admin -->
       <div class="programs" *ngIf="rolUser=='admin'">

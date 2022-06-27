@@ -16,7 +16,10 @@ export class UserComponent implements OnInit {
   profilePic: string = '';
   birthday: any;
   phoneNumber: string = '';
+  programs: Array<any> = [];
   showInfo: boolean = false;
+  addPrevProgram: boolean = false;
+  previousProgram: string = '';
   userImageView = document.getElementById("Profile-Picture") as HTMLImageElement;
 
   constructor(private apiUserService: ApiUserService) {
@@ -34,10 +37,33 @@ export class UserComponent implements OnInit {
       this.profilePic = this.actualUser[0].strPhoto;
       this.birthday = this.actualUser[0].dateBirth.slice(0,10);
       this.phoneNumber = this.actualUser[0].strPhone;
+      this.programs = this.actualUser[0].arrPrograms;
     }, 900);
   }
-  deleteAccount() {
-
+  deleteAccount() { }
+  addPreviousProgram() {
+    if(this.previousProgram == '') {
+      alert("Complete the field to continue.");
+      return;
+    }
+    const u = this.actualUser[0];
+    const ID_USER = this.actualUser[0]._id;
+    u.arrPrograms.push(this.previousProgram);
+    const NEW_USER = {
+      boolStatus: u.boolStatus,
+      strRol: u.strRol,
+      strName: u.strName,
+      strLastName: u.strLastName,
+      dateBirth: u.dateBirth,
+      strPhone: u.strPhone,
+      strEmail: u.strEmail,
+      strPassword: u.strPassword,
+      strCareer: u.strCareer,
+      strPhoto: u.strPhoto,
+      arrPrograms: u.arrPrograms
+    }
+    this.apiUserService.editUser(ID_USER, NEW_USER);
+    this.previousProgram = '';
   }
 
   ngOnInit(): void {
