@@ -22,7 +22,11 @@
           <p class="sh-letter">Change password</p>
           <p class="sh-letter">Birthday: {{birthday}}</p>
           <p class="sh-letter">Phone: {{phoneNumber}}</p>
-          <p class="sh-letter danger" (click)="deleteAccount()">Delete my account</p>
+          <p class="sh-letter danger" (click)="deleteUser = !deleteUser">Delete my account</p>
+          <div *ngIf="deleteUser">
+            <input type="password" placeholder="Type your password to confirm" class="delete-input" [(ngModel)]="confirmDelete">
+            <button (click)="deleteAccount()" class="btn btn-success">Confirm</button>
+          </div>
           <p class="sh-letter" (click)="showInfo = !showInfo">Less <img src="../../../assets/icon-more.png" class="view view-less" alt="Less"></p>
         </div>
       </div>

@@ -8,6 +8,9 @@
   text-align: center;
   padding-top: 30px;
 }
+.btn-success {
+  margin: 10px 30%;
+}
 .user-data {
   min-width: 40%;
 }
@@ -23,6 +26,11 @@ input {
 input:focus {
   outline: none;
   border: 2px solid #2f7c72;
+}
+.delete-input {
+  font-size: 16px;
+  margin: 10px 0px;
+  width: 100%;
 }
 .profile {
   padding: 30px;
