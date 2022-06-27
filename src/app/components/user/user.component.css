@@ -54,6 +54,14 @@ input:focus {
   min-width: 35%;
   padding: 20px;
 }
+.question__list > p, .question__answers {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #000;
+}
+.question__title {
+  padding-top: 20px;
+}
 .view {
   width: 20px;
 }

@@ -54,7 +54,18 @@
       <!-- Questions -->
       <div class="questions">
         <p class="text">My Questions</p>
-        <p class="sh-letter danger">You don't have any question yet! :(</p>
+        <p class="sh-letter danger" *ngIf="forumQuestions.length === 0">You don't have any question yet! :(</p>
+        <a class="sh-letter" (click)="showQuestions = !showQuestions" *ngIf="forumQuestions.length > 0">View my questions</a>
+        <div *ngIf="showQuestions">
+          <div *ngFor="let q of forumQuestions">
+            <div class="question__list">
+              <p class="question__title"><b>{{q.strQuestion}}</b></p>
+              <ul class="question__answers" *ngFor="let ans of q.arrAnswers">
+                <li>{{ans}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- Careers -->
       <div class="careers" *ngIf="rolUser=='admin'">

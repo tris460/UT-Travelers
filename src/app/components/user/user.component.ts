@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiForumService } from 'src/app/services/api-forum.service';
 import { ApiUserService } from 'src/app/services/api-user.service';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -9,6 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  ID_USER: any;
   rolUser: any = '';
   users: Array<any> = [];
   actualUser: any;
@@ -25,9 +27,11 @@ export class UserComponent implements OnInit {
   previousProgram: string = '';
   deleteUser: boolean = false;
   confirmDelete: string = '';
+  forumQuestions: Array<any> = [];
+  showQuestions: boolean = false;
   userImageView = document.getElementById("Profile-Picture") as HTMLImageElement;
 
-  constructor(private apiUserService: ApiUserService,private router: Router, private LoginService: LoginService) {
+  constructor(private apiUserService: ApiUserService,private router: Router, private LoginService: LoginService, private ApiForumService: ApiForumService) {
     this.emailActualUser = localStorage.getItem("userUTTraveler")
     this.emailActualUser = JSON.parse(this.emailActualUser).email;
     setTimeout(() => {
@@ -37,6 +41,7 @@ export class UserComponent implements OnInit {
       this.users = apiUserService.information;
       this.actualUser = this.users.filter(u =>
         this.emailActualUser == u.strEmail);
+      this.ID_USER = this.actualUser[0]._id;
       this.userName = `${this.actualUser[0].strName} ${this.actualUser[0].strLastName}`;
       this.career = this.actualUser[0].strCareer;
       this.profilePic = this.actualUser[0].strPhoto;
@@ -44,6 +49,8 @@ export class UserComponent implements OnInit {
       this.phoneNumber = this.actualUser[0].strPhone;
       this.programs = this.actualUser[0].arrPrograms;
       this.password = this.actualUser[0].strPassword;
+      this.forumQuestions = ApiForumService.questions.filter((q: { idUser: any; }) =>
+        q.idUser === this.ID_USER)
     }, 900);
   }
   deleteAccount() {
@@ -79,7 +86,7 @@ export class UserComponent implements OnInit {
       return;
     }
     const u = this.actualUser[0];
-    const ID_USER = this.actualUser[0]._id;
+
     u.arrPrograms.push(this.previousProgram);
     const NEW_USER = {
       boolStatus: u.boolStatus,
@@ -94,10 +101,9 @@ export class UserComponent implements OnInit {
       strPhoto: u.strPhoto,
       arrPrograms: u.arrPrograms
     }
-    this.apiUserService.editUser(ID_USER, NEW_USER);
+    this.apiUserService.editUser(this.ID_USER, NEW_USER);
     this.previousProgram = '';
   }
-
   ngOnInit(): void {
   }
 
