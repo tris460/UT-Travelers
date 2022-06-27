@@ -39,4 +39,17 @@ export class ApiUserService {
       }
     })
   }
+  newUser(data: any) {
+    this.http.post(`${this.urlApi}/`, data)
+    .subscribe({
+      next: res => {
+        setTimeout(() => {
+          this.getData();
+        }, 500);
+      },
+      error: err => {
+        console.error(err);
+      }
+    })
+  }
 }

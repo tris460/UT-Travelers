@@ -41,22 +41,7 @@ export class LoginComponent implements OnInit {
       u.strEmail === this.loginEmail && u.strPassword === this.loginPassword);
 
       if (CORRECT_USER.length > 0) {
-        const USER_INFO = { // Object to save data in local storage
-          rol: CORRECT_USER[0].strRol,
-          email: CORRECT_USER[0].strEmail
-        };
-        // Save login information in local storage
-        localStorage.setItem('userUTTraveler', JSON.stringify(USER_INFO));
-        switch (CORRECT_USER[0].strRol) {
-          case "user":
-            this.router.navigate(["user"]);
-            break;
-          case "admin":
-            this.router.navigate(["admin"]);
-            break;
-          default:
-            this.router.navigate(["home"]);
-        }
+       this.redirectUser(CORRECT_USER[0]);
       } else {
         alert("Incorrect credentials");
       }
@@ -69,6 +54,9 @@ export class LoginComponent implements OnInit {
       return;
     }
     const NEW_USER = {
+      boolStatus: true,
+      strRol: 'user',
+      arrPrograms: [],
       strEmail: this.registerEmail,
       strPassword: this.registerPassword,
       strName: this.registerName,
@@ -78,7 +66,10 @@ export class LoginComponent implements OnInit {
       strCareer: this.registerCareer,
       strPhoto: "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo="
     }
-    console.log(NEW_USER)
+    this.apiUserService.newUser(NEW_USER);
+    setTimeout(() => {
+      this.redirectUser(NEW_USER);
+    }, 600);
   }
   verifyFields() {
     if (this.registerEmail !== ''
@@ -91,6 +82,24 @@ export class LoginComponent implements OnInit {
       } else {
         return false;
       }
+  }
+  redirectUser(user: any) {
+    const USER_INFO = { // Object to save data in local storage
+      rol: user.strRol,
+      email: user.strEmail
+    };
+     // Save login information in local storage
+     localStorage.setItem('userUTTraveler', JSON.stringify(USER_INFO));
+     switch (user.strRol) {
+       case "user":
+         this.router.navigate(["user"]);
+         break;
+       case "admin":
+         this.router.navigate(["admin"]);
+         break;
+       default:
+         this.router.navigate(["home"]);
+     }
   }
   ngOnInit(): void {
   }
