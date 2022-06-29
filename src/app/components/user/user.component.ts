@@ -37,26 +37,30 @@ export class UserComponent implements OnInit {
 
   constructor(private apiUserService: ApiUserService,private router: Router, private LoginService: LoginService, private ApiForumService: ApiForumService) {
     this.emailActualUser = localStorage.getItem("userUTTraveler")
-    this.emailActualUser = JSON.parse(this.emailActualUser).email;
-    setTimeout(() => {
-      this.rolUser = localStorage.getItem("userUTTraveler");
-      this.rolUser = JSON.parse(this.rolUser);
-      this.rolUser = this.rolUser.rol;
-      this.users = apiUserService.information;
-      this.actualUser = this.users.filter(u =>
-        this.emailActualUser == u.strEmail);
-      this.ID_USER = this.actualUser[0]._id;
-      this.userName = `${this.actualUser[0].strName} ${this.actualUser[0].strLastName}`;
-      this.career = this.actualUser[0].strCareer;
-      this.profilePic = this.actualUser[0].strPhoto;
-      this.birthday = this.actualUser[0].dateBirth.slice(0,10);
-      this.phoneNumber = this.actualUser[0].strPhone;
-      this.programs = this.actualUser[0].arrPrograms;
-      this.password = this.actualUser[0].strPassword;
-      this.photo = this.actualUser[0].strPhoto;
-      this.forumQuestions = ApiForumService.questions.filter((q: { idUser: any; }) =>
-        q.idUser === this.ID_USER)
-    }, 900);
+    this.rolUser = localStorage.getItem("userUTTraveler");
+    if(this.emailActualUser === null) {
+      this.emailActualUser = '';
+      this.rolUser = '';
+    } else {
+      this.emailActualUser = JSON.parse(this.emailActualUser).email;
+      this.rolUser = JSON.parse(this.rolUser).rol;
+      setTimeout(() => {
+        this.users = apiUserService.information;
+        this.actualUser = this.users.filter(u =>
+          this.emailActualUser == u.strEmail);
+        this.ID_USER = this.actualUser[0]._id;
+        this.userName = `${this.actualUser[0].strName} ${this.actualUser[0].strLastName}`;
+        this.career = this.actualUser[0].strCareer;
+        this.profilePic = this.actualUser[0].strPhoto;
+        this.birthday = this.actualUser[0].dateBirth.slice(0,10);
+        this.phoneNumber = this.actualUser[0].strPhone;
+        this.programs = this.actualUser[0].arrPrograms;
+        this.password = this.actualUser[0].strPassword;
+        this.photo = this.actualUser[0].strPhoto;
+        this.forumQuestions = ApiForumService.questions.filter((q: { idUser: any; }) =>
+          q.idUser === this.ID_USER)
+      }, 900);
+    }
   }
   deleteAccount() {
     if(this.password === this.confirmDelete) {

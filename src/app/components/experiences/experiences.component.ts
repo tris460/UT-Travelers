@@ -49,6 +49,7 @@ export class ExperiencesComponent implements OnInit {
     this.experiencesListShown = this.experiencesList.slice(this.experienceStart, this.experienceEnd);
   }
   addExperience() {
+    // if(this.userComponent.emailActualUser === null) return;
     const NEW_EXPERIENCE = {
       boolStatus: true,
       strDescription: this.newExperience,
