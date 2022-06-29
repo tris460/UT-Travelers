@@ -12,8 +12,19 @@
       </form>
       <form *ngIf="showFormAdd">
         <input type="text" class="form-control me-2 letter-25" placeholder="Question" [(ngModel)]="newQuestion" [ngModelOptions]="{standalone: true}">
-        <input type="text" class="form-control me-2 letter-25" placeholder="Status" [(ngModel)]="newStatus" [ngModelOptions]="{standalone: true}">
-        <input type="text" class="form-control me-2 letter-25" placeholder="Topic" [(ngModel)]="newTopic" [ngModelOptions]="{standalone: true}">
+        <!-- <input type="text" class="form-control me-2 letter-25" placeholder="Status" [(ngModel)]="newStatus" [ngModelOptions]="{standalone: true}"> -->
+        <select class="form-select letter-25" id="selectStatus" (change)="selectStatus()">
+          <option selected value="Unsolved">Unsolved</option>
+          <option value="Solved">Solved</option>
+          <option value="Urgent">Urgent</option>
+        </select>
+        <!-- <input type="text" class="form-control me-2 letter-25" placeholder="Topic" [(ngModel)]="newTopic" [ngModelOptions]="{standalone: true}"> -->
+        <select class="form-select letter-25" id="selectTopic" (change)="selectTopic()">
+          <option selected value="Others">Others</option>
+          <option value="Costs">Costs</option>
+          <option value="Dates">Dates</option>
+        </select>
+        <br><br>
         <button type="button" class="btn btn-light letter-25" (click)="addQuestion()"><i class="fa-solid fa-save"></i> Save</button>
         <button type="button" class="btn btn-danger letter-25" (click)="showFormAdd = false"><i class="fa-solid fa-cancel"></i> Cancel</button>
       </form>

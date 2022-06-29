@@ -23,8 +23,8 @@ export class ForumComponent implements OnInit {
   constructor(private apiForumService: ApiForumService) {
     this.showFormAdd = false;
     this.newQuestion = '';
-    this.newStatus = '';
-    this.newTopic = '';
+    this.newStatus = 'Unsolved';
+    this.newTopic = 'Others';
     this.filterBy = '';
     this.questionAnswer = '';
     setTimeout(() => {
@@ -115,6 +115,12 @@ export class ForumComponent implements OnInit {
     this.apiForumService.editQuestion(EDITED_QUESTION, idQuestion);
     alert("Answer added correctly");
     this.questionAnswer = '';
+  }
+  selectStatus() {
+    this.newStatus = (<HTMLInputElement>document.getElementById("selectStatus")).value;
+  }
+  selectTopic() {
+    this.newTopic = (<HTMLInputElement>document.getElementById("selectTopic")).value;
   }
   ngOnInit(): void {
   }
