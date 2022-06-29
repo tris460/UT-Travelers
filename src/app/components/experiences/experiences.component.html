@@ -25,7 +25,14 @@
     </div>
   </div>
   <!-- Contact -->
-  <div class="contact">
+  <div class="contact" *ngIf="!logged">
     <p>Want to add your experience? <a href="mailto:trism460@gmail.com?Subject=Want%20to%20add%20my%20experience%20-UTTravelers" class="contact-mail">Contact us</a></p>
+  </div>
+  <div class="contact" *ngIf="showForm">
+    <input class="contact__input" type="text" placeholder="Write your experience here" [(ngModel)]="newExperience"><br>
+    <button class="btn btn-success" (click)="addExperience()">Add Experience</button>
+  </div>
+  <div class="contact" (click)="showForm = !showForm" *ngIf="logged">
+    <p><u>Add my experience</u></p>
   </div>
 </div>

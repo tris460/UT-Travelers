@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiForumService } from 'src/app/services/api-forum.service';
 import { ApiUserService } from 'src/app/services/api-user.service';
@@ -8,6 +8,9 @@ import { LoginService } from 'src/app/services/login.service';
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
+})
+@Injectable({
+  providedIn: 'root',
 })
 export class UserComponent implements OnInit {
   ID_USER: any;
@@ -29,6 +32,7 @@ export class UserComponent implements OnInit {
   confirmDelete: string = '';
   forumQuestions: Array<any> = [];
   showQuestions: boolean = false;
+  photo: string = '';
   userImageView = document.getElementById("Profile-Picture") as HTMLImageElement;
 
   constructor(private apiUserService: ApiUserService,private router: Router, private LoginService: LoginService, private ApiForumService: ApiForumService) {
@@ -49,6 +53,7 @@ export class UserComponent implements OnInit {
       this.phoneNumber = this.actualUser[0].strPhone;
       this.programs = this.actualUser[0].arrPrograms;
       this.password = this.actualUser[0].strPassword;
+      this.photo = this.actualUser[0].strPhoto;
       this.forumQuestions = ApiForumService.questions.filter((q: { idUser: any; }) =>
         q.idUser === this.ID_USER)
     }, 900);

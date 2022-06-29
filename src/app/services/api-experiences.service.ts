@@ -27,4 +27,14 @@ export class ApiExperiencesService {
       }
     });
   }
+  addExperience(data: object) {
+    this.http.post(this.urlApi, data).subscribe({
+      next: res => {
+        this.getData();
+      },
+      error: err => {
+        console.error(err);
+      }
+    });
+  }
 }

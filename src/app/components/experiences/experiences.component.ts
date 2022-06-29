@@ -1,19 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiExperiencesService } from 'src/app/services/api-experiences.service';
+import { UserComponent } from '../user/user.component';
 
 @Component({
   selector: 'app-experiences',
   templateUrl: './experiences.component.html',
   styleUrls: ['./experiences.component.css']
 })
+
 export class ExperiencesComponent implements OnInit {
   experiencesList: Array<any> = [];
   experienceStart: number = 0;
   experienceEnd: number = 0;
   experiencesLength: number = 0;
   experiencesListShown: Array<any> = [];
-
-  constructor(private apiExperiencesService: ApiExperiencesService) {
+  logged: boolean = false;
+  showForm: boolean = false;
+  newExperience: string = '';
+  constructor(private apiExperiencesService: ApiExperiencesService, private userComponent: UserComponent) {
+    if(localStorage.getItem("userUTTraveler") !== null) this.logged = true;
     setTimeout(() => {
       this.experiencesList = apiExperiencesService.experiences;
       this.experiencesLength = this.experiencesList.length;
@@ -42,6 +47,21 @@ export class ExperiencesComponent implements OnInit {
     if(this.experienceEnd > this.experiencesLength) this.experienceEnd = this.experiencesLength;
     this.experiencesListShown = [];
     this.experiencesListShown = this.experiencesList.slice(this.experienceStart, this.experienceEnd);
+  }
+  addExperience() {
+    const NEW_EXPERIENCE = {
+      boolStatus: true,
+      strDescription: this.newExperience,
+      strName: this.userComponent.userName,
+      strEmail: this.userComponent.emailActualUser,
+      strPhone: this.userComponent.phoneNumber,
+      strPhoto: this.userComponent.photo
+    }
+    this.apiExperiencesService.addExperience(NEW_EXPERIENCE);
+    alert("Experience added correctly");
+    setTimeout(() => {
+      window.location.reload();
+    }, 700);
   }
   ngOnInit(): void {
   }
