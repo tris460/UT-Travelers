@@ -12,42 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var dataCareers = google.visualization.arrayToDataTable([
-          ['Career', 'Students'],
-          ['TIDSM', 11],
-          ['TIARD', 2],
-          ['MAI', 2],
-          ['PA', 2],
-          ['DNAM', 7]
-        ]);
-        var dataPrograms = google.visualization.arrayToDataTable([
-          ['Program', 'Students'],
-          ['Summer Camps in the USA', 11],
-          ['Summer Camps in Canada', 8],
-          ['Work and Travel in the USA', 4],
-          ['Inter and trainee programs', 1],
-        ]);
-
-        var optionsCareers = {
-          title: 'Careers'
-        };
-        var optionsPrograms = {
-          title: 'Programs'
-        };
-
-        var chartCareers = new google.visualization.PieChart(document.getElementById('piechart-careers'));
-        var chartPrograms = new google.visualization.PieChart(document.getElementById('piechart-programs'));
-
-        chartCareers.draw(dataCareers, optionsCareers);
-        chartPrograms.draw(dataPrograms, optionsPrograms);
-      }
-    </script>
 </head>
 <body>
   <app-root></app-root>
