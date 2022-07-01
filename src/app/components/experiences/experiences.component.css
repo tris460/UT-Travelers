@@ -53,3 +53,11 @@
     top: 0px;
   }
 }
+@media screen and (max-width: 630px) {
+  .flex-nowrap {
+    display: block;
+  }
+  .ind-experience {
+    max-width: 90%;
+  }
+}
