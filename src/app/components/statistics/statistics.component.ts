@@ -136,7 +136,7 @@ export class StatisticsComponent implements OnInit {
    * number of students [[program, students]]
    */
   drawChart(infoCareers: any, infoPrograms: any) {
-    let dataCareers = google.visualization.arrayToDataTable();
+    let dataCareers = google.visualization.arrayToDataTable(infoCareers);
     let dataPrograms = google.visualization.arrayToDataTable(infoPrograms);
     let optionsCareers = {
       title: 'Careers'
