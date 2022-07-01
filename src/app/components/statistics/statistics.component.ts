@@ -8,13 +8,15 @@ declare let google: any;
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit {
-  programsList: Array<any> = [];
-  careerList: Array<any> = [];
-  userList: Array<any> = [];
+  programsList: Array<any> = []; // Programs registered by all users
+  careerList: Array<any> = []; // Careers registered for each user
+  userList: Array<any> = []; // Users registered in the DB
+  // Number of students in each program
   programSummerUSA: number = 0;
   programSummerCan: number = 0;
   programWork: number = 0;
   programInter: number = 0;
+  // Number of students from each career
   carPIAM: number = 0;
   carERAES: number = 0;
   carDNAM: number = 0;
@@ -125,8 +127,16 @@ export class StatisticsComponent implements OnInit {
     }, 800);
   }
 
+  /**
+   * This function draws the chart in the HTML document, depending on the information
+   * sended by parameters.
+   * @param infoCareers Bi-dimensional array with the information of the careers and
+   * number of students [[career, students]]
+   * @param infoPrograms Bi-dimensional array with the information of the programs and
+   * number of students [[program, students]]
+   */
   drawChart(infoCareers: any, infoPrograms: any) {
-    let dataCareers = google.visualization.arrayToDataTable(infoCareers);
+    let dataCareers = google.visualization.arrayToDataTable();
     let dataPrograms = google.visualization.arrayToDataTable(infoPrograms);
     let optionsCareers = {
       title: 'Careers'

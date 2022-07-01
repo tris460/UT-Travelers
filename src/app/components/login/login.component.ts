@@ -33,7 +33,11 @@ export class LoginComponent implements OnInit {
     this.registerCareer = '';
     this.users = [];
   }
-
+  /**
+   * This function verifies if an email and password exist in the DB
+   * and are from the same user, if they do, the user is redirected
+   * to the main page, if not, an alert appears.
+   */
   login() {
     setTimeout(() => {
       this.users = this.apiUserService.information;
@@ -47,6 +51,12 @@ export class LoginComponent implements OnInit {
       }
     }, 500);
   }
+  /**
+   * This function creates a new user if the function verifyFields()
+   * returns true, after that, the new user is saved in the DB and
+   * the user is redirected to the main page.
+   * @returns Anything if the user didn't complete the fields
+   */
   newUser() {
     let fieldsVerified = this.verifyFields();
     if(!fieldsVerified) {
@@ -71,6 +81,10 @@ export class LoginComponent implements OnInit {
       this.redirectUser(NEW_USER);
     }, 600);
   }
+  /**
+   * This function verifies if the user filled all the fields in the form.
+   * @returns True if the user completed the fields correctly, false if not
+   */
   verifyFields() {
     if (this.registerEmail !== ''
       && this.registerPassword !== ''

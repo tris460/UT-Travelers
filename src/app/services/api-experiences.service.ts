@@ -5,14 +5,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiExperiencesService {
-  urlApi: string;
-  experiences: any;
+  urlApi: string; // URL to do the petition
+  experiences: any; // Returning data from the petition GET
 
   constructor(private http: HttpClient) {
     this.urlApi = 'http://localhost:3000/api/experiences';
     this.experiences = [];
     this.getData();
   }
+  /**
+   * This function allows you to get the data from an API and read
+   * the data from a variable, if there's an error, it will appear
+   * in the console.
+   */
   getData() {
     this.http.get(this.urlApi)
     .subscribe({
@@ -27,6 +32,12 @@ export class ApiExperiencesService {
       }
     });
   }
+  /**
+   * This function saves a new experience in the DB and then executes the function getData()
+   * to update the actual data saved.
+   * @param data This parameter is an object with the data needed to save
+   * a new experience in the DB.
+   */
   addExperience(data: object) {
     this.http.post(this.urlApi, data).subscribe({
       next: res => {

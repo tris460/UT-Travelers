@@ -7,18 +7,18 @@ import { ApiForumService } from 'src/app/services/api-forum.service';
   styleUrls: ['./forum.component.css']
 })
 export class ForumComponent implements OnInit {
-  ALL_QUESTIONS: Array<any> = [];
-  questions: Array<any> = [];
-  showFormAdd: boolean;
-  newQuestion: string;
-  newStatus: string;
-  newTopic: string;
-  filterBy: any;
-  searchText: any = '';
-  totalQuestionsNumber: number = 0;
-  showXQuestions: number = 3;
-  allQuestionsVisible: boolean = false;
-  questionAnswer: string;
+  ALL_QUESTIONS: Array<any> = []; // Questions registered in the DB
+  questions: Array<any> = []; // Questions filtered by the user choice
+  showFormAdd: boolean; // If show the form to add a question
+  newQuestion: string; // Text of the new question
+  newStatus: string; // New question's status
+  newTopic: string; // New question's topic
+  filterBy: any; // How the questions are going to be filtered
+  searchText: any = ''; // Text to search in the search bar
+  totalQuestionsNumber: number = 0; // How many questions are registered in the DB
+  showXQuestions: number = 3; // How many questions show in case have so much
+  allQuestionsVisible: boolean = false; // If all the questions are shown
+  questionAnswer: string; // New answer to be saved for a question
 
   constructor(private apiForumService: ApiForumService) {
     this.showFormAdd = false;
@@ -39,7 +39,10 @@ export class ForumComponent implements OnInit {
       }
     }, 1000);
   }
-
+  /**
+   * If the fields has been filled, a new question is added to the DB and then, the
+   * page is reloaded to get the data updated.
+   */
   addQuestion() {
     if (this.newQuestion !== '' && this.newStatus !== '' && this.newTopic !== '') {
       const NEW_QUESTION = {
@@ -58,9 +61,17 @@ export class ForumComponent implements OnInit {
       alert('Complete the fields correctly');
     }
   }
+  /**
+   * This function allows you to see the form to add a question.
+   */
   showForm() {
     this.showFormAdd = true;
   }
+  /**
+   * With this function you can show just the elements you want to see,
+   * in this case, there're just a few, according to the questions registered,
+   * it is done by the function filter().
+   */
   filterQuestions() {
     this.filterBy = (<HTMLInputElement>document.getElementById("selectFilter")).value;
     this.questions = this.ALL_QUESTIONS.filter((q) => {
@@ -86,6 +97,10 @@ export class ForumComponent implements OnInit {
       }
     });
   }
+  /**
+   * If there're questions hided, this function allows you to view three more
+   * until all the questions are shown.
+   */
   viewMore() {
     this.showXQuestions += 3;
     this.questions = this.ALL_QUESTIONS.slice(0,this.showXQuestions);
@@ -93,6 +108,10 @@ export class ForumComponent implements OnInit {
       this.allQuestionsVisible = true;
     }
   }
+  /**
+   * This function hide some questions from the screen if there're more
+   * than three.
+   */
   viewLess() {
     this.showXQuestions -= 3;
     this.questions = this.ALL_QUESTIONS.slice(0,-this.showXQuestions);
@@ -100,6 +119,10 @@ export class ForumComponent implements OnInit {
       this.allQuestionsVisible = false;
     }
   }
+  /**
+   * This function edits a question, adding the answers wrote to the DB.
+   * @param index Index of the question where the user is answering
+   */
   addAnswer(index: number) {
     let question = this.questions[index];
     question.arrAnswers.push(this.questionAnswer);
@@ -116,9 +139,15 @@ export class ForumComponent implements OnInit {
     alert("Answer added correctly");
     this.questionAnswer = '';
   }
+  /**
+   * Get the value selected by the user for the selectStatus element.
+   */
   selectStatus() {
     this.newStatus = (<HTMLInputElement>document.getElementById("selectStatus")).value;
   }
+  /**
+   * Get the value selected by the user for the selectTopic element.
+   */
   selectTopic() {
     this.newTopic = (<HTMLInputElement>document.getElementById("selectTopic")).value;
   }

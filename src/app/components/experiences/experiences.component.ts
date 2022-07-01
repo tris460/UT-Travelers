@@ -9,14 +9,15 @@ import { UserComponent } from '../user/user.component';
 })
 
 export class ExperiencesComponent implements OnInit {
-  experiencesList: Array<any> = [];
-  experienceStart: number = 0;
-  experienceEnd: number = 0;
-  experiencesLength: number = 0;
-  experiencesListShown: Array<any> = [];
-  logged: boolean = false;
-  showForm: boolean = false;
-  newExperience: string = '';
+  experiencesList: Array<any> = []; // Experiences from the DB
+  experienceStart: number = 0; // Experience's index where they start appearing
+  experienceEnd: number = 0; // Experience's index where they stop appearing
+  experiencesLength: number = 0; // Quantity of experiences registered
+  experiencesListShown: Array<any> = []; // Experiences to show in the user's view
+  logged: boolean = false; // If the user is logged, he can add it's experience, else, not
+  showForm: boolean = false; // In case the user is logged, he can see the form
+  newExperience: string = ''; // Text to add with the experience
+
   constructor(private apiExperiencesService: ApiExperiencesService, private userComponent: UserComponent) {
     if(localStorage.getItem("userUTTraveler") !== null) this.logged = true;
     setTimeout(() => {
@@ -31,6 +32,12 @@ export class ExperiencesComponent implements OnInit {
       }
     }, 1000);
   }
+  /**
+   * This function shows an alert with the user email and phone in case some user
+   * wants to access to that information.
+   * @param index Index of the experiences' array to show the information of the user who
+   * wrote that experience
+   */
   getContactInformation(index: number) {
     if (localStorage.getItem("userUTTraveler") === null) {
       alert("You have to log in to see the contact information.");
@@ -39,6 +46,9 @@ export class ExperiencesComponent implements OnInit {
       alert(`Email: ${USER_SELECTED.strEmail}\nPhone: ${USER_SELECTED.strPhone}`);
     }
   }
+  /**
+   * This function show the next 3 experiences in the array when the button is clicked.
+   */
   showNext() {
     if(this.experienceEnd === this.experiencesLength) this.experienceEnd = 0;
     this.experienceStart += 3;
@@ -48,8 +58,11 @@ export class ExperiencesComponent implements OnInit {
     this.experiencesListShown = [];
     this.experiencesListShown = this.experiencesList.slice(this.experienceStart, this.experienceEnd);
   }
+  /**
+   * If the user wants to add his experience, the object is saved in the DB,
+   * after that, the page is reloaded to get the changes.
+   */
   addExperience() {
-    // if(this.userComponent.emailActualUser === null) return;
     const NEW_EXPERIENCE = {
       boolStatus: true,
       strDescription: this.newExperience,

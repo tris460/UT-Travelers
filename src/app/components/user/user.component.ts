@@ -13,10 +13,11 @@ import { LoginService } from 'src/app/services/login.service';
   providedIn: 'root',
 })
 export class UserComponent implements OnInit {
-  ID_USER: any;
-  rolUser: any = '';
-  users: Array<any> = [];
-  actualUser: any;
+  ID_USER: any; // Actual ser's ID
+  rolUser: any = ''; // User's rol: admin/user
+  users: Array<any> = []; // List of the user registered
+  actualUser: any; // User logged
+  // User's logged information
   emailActualUser: any;
   userName: string = '';
   career: string = '';
@@ -25,14 +26,15 @@ export class UserComponent implements OnInit {
   phoneNumber: string = '';
   programs: Array<any> = [];
   password: string = '';
-  showInfo: boolean = false;
-  addPrevProgram: boolean = false;
-  previousProgram: string = '';
-  deleteUser: boolean = false;
-  confirmDelete: string = '';
-  forumQuestions: Array<any> = [];
-  showQuestions: boolean = false;
   photo: string = '';
+
+  showInfo: boolean = false; // Show icon to view more user's information
+  addPrevProgram: boolean = false; // Show form to add a program
+  previousProgram: string = ''; // New program's name
+  deleteUser: boolean = false; // Show the information to delete an account
+  confirmDelete: string = ''; // Password confirmation
+  forumQuestions: Array<any> = []; // Questions done in the forum
+  showQuestions: boolean = false; // If show the questions made by the user
   userImageView = document.getElementById("Profile-Picture") as HTMLImageElement;
 
   constructor(private apiUserService: ApiUserService,private router: Router, private LoginService: LoginService, private ApiForumService: ApiForumService) {
@@ -62,6 +64,12 @@ export class UserComponent implements OnInit {
       }, 900);
     }
   }
+  /**
+   * This function simulates the deletion of an account updating the
+   * account's status from true to false, and the login should
+   * show a message saying the account doesn't exist.
+   * The user has to write the password to confirm he wants to delete the account.
+   */
   deleteAccount() {
     if(this.password === this.confirmDelete) {
       const u = this.actualUser[0];
@@ -89,6 +97,12 @@ export class UserComponent implements OnInit {
       alert("The password is incorrect, try again.");
     }
   }
+  /**
+   * Saves a previous program in the DB, linking the program's name
+   * with the user's ID.
+   * To do that, the logged user's account has to be updated.
+   * @returns Anything if the user didn't write a word in the input.
+   */
   addPreviousProgram() {
     if(this.previousProgram == '') {
       alert("Complete the field to continue.");
