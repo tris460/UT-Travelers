@@ -28,6 +28,7 @@ export class UserComponent implements OnInit {
   password: string = '';
   photo: string = '';
 
+  newPhoto: string = ''; // New photo's URL
   showInfo: boolean = false; // Show icon to view more user's information
   addPrevProgram: boolean = false; // Show form to add a program
   previousProgram: string = ''; // New program's name
@@ -126,6 +127,28 @@ export class UserComponent implements OnInit {
     }
     this.apiUserService.editUser(this.ID_USER, NEW_USER);
     this.previousProgram = '';
+  }
+  changePhoto() {
+    if(this.newPhoto == '') {
+      alert("Write a URL's photo");
+      return;
+    }
+    const u = this.actualUser[0];
+    const NEW_USER = {
+      boolStatus: u.boolStatus,
+      strRol: u.strRol,
+      strName: u.strName,
+      strLastName: u.strLastName,
+      dateBirth: u.dateBirth,
+      strPhone: u.strPhone,
+      strEmail: u.strEmail,
+      strPassword: u.strPassword,
+      strCareer: u.strCareer,
+      strPhoto: this.newPhoto,
+      arrPrograms: u.arrPrograms
+    }
+    this.apiUserService.editUser(this.ID_USER, NEW_USER);
+    this.newPhoto = '';
   }
   ngOnInit(): void { }
 

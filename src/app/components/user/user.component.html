@@ -12,8 +12,8 @@
           <img src="../../../assets/icon-change.png" class="profile-change" alt="Change photo">
         </div>
         <div>
-          <input type="file" name="newProfilePicture" accept="image/*">
-          <button class="btn btn-success" type="submit">Change my photo</button>
+          <input type="text" placeholder="New photo's URL" [(ngModel)]="newPhoto">
+          <button class="btn btn-success" type="submit" (click)="changePhoto()">Change my photo</button>
         </div>
       </div>
       <!-- User personal info -->
