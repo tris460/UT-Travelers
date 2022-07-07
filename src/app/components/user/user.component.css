@@ -11,6 +11,15 @@
 .btn-success {
   margin: 10px 30%;
 }
+.green-letter {
+  color: #008037;
+}
+.red-letter {
+  color: #880b0b;
+}
+.green-letter:hover, .red-letter:hover {
+  cursor: pointer;
+}
 .user-data {
   min-width: 40%;
 }

@@ -36,6 +36,7 @@ export class UserComponent implements OnInit {
   confirmDelete: string = ''; // Password confirmation
   forumQuestions: Array<any> = []; // Questions done in the forum
   showQuestions: boolean = false; // If show the questions made by the user
+  showInputImage: boolean = true; // If show the upload image form
   userImageView = document.getElementById("Profile-Picture") as HTMLImageElement;
 
   constructor(private apiUserService: ApiUserService,private router: Router, private LoginService: LoginService, private ApiForumService: ApiForumService) {

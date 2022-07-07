@@ -8,13 +8,6 @@
       <!-- Profile picture -->
       <div class="profile">
         <img id="Profile-Picture" src={{photo}} class="profile-picture" alt="Profile picture">
-        <div>
-          <img src="../../../assets/icon-change.png" class="profile-change" alt="Change photo">
-        </div>
-        <div>
-          <input type="text" placeholder="New photo's URL" [(ngModel)]="newPhoto">
-          <button class="btn btn-success" type="submit" (click)="changePhoto()">Change my photo</button>
-        </div>
       </div>
       <!-- User personal info -->
       <div class="info">
@@ -23,10 +16,15 @@
         <p class="sh-letter" (click)="showInfo = !showInfo" *ngIf="!showInfo">More <img src="../../../assets/icon-more.png" class="view view-more" alt="More"></p>
         <div *ngIf="showInfo">
           <p class="sh-letter">Email: {{emailActualUser}}</p>
-          <p class="sh-letter">Change password</p>
+          <p class="sh-letter green-letter">Change password</p>
+          <p class="sh-letter green-letter" (click)="showInputImage = !showInputImage">Change profile picture</p>
+          <div *ngIf="!showInputImage">
+            <input type="text" placeholder="New photo's URL" [(ngModel)]="newPhoto">
+            <button class="btn btn-success" type="submit" (click)="changePhoto()">Change</button>
+          </div>
           <p class="sh-letter">Birthday: {{birthday}}</p>
           <p class="sh-letter">Phone: {{phoneNumber}}</p>
-          <p class="sh-letter danger" (click)="deleteUser = !deleteUser">Delete my account</p>
+          <p class="sh-letter red-letter" (click)="deleteUser = !deleteUser">Delete my account</p>
           <div *ngIf="deleteUser">
             <input type="password" placeholder="Type your password to confirm" class="delete-input" [(ngModel)]="confirmDelete">
             <button (click)="deleteAccount()" class="btn btn-success">Confirm</button>
