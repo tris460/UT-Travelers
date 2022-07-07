@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
       dateBirth: this.registerBirthday,
       strPhone: this.registerPhone,
       strCareer: this.registerCareer,
-      strPhoto: "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo="
+      strPhoto: "https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101028/112815904-no-hay-icono-de-imagen-disponible-ilustraci%C3%B3n-vectorial-plana.jpg?ver=6"
     }
     this.apiUserService.newUser(NEW_USER);
     setTimeout(() => {

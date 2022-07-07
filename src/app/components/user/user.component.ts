@@ -61,7 +61,7 @@ export class UserComponent implements OnInit {
         this.photo = this.actualUser[0].strPhoto;
         this.forumQuestions = ApiForumService.questions.filter((q: { idUser: any; }) =>
           q.idUser === this.ID_USER)
-      }, 900);
+      }, 1000);
     }
   }
   /**
@@ -127,7 +127,6 @@ export class UserComponent implements OnInit {
     this.apiUserService.editUser(this.ID_USER, NEW_USER);
     this.previousProgram = '';
   }
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
